@@ -88,7 +88,7 @@ docs/chapters/00-setup.md
 | 10 | `async` / `await` 与错误处理 | 已有草稿 |
 | 11 | Vitest 测试 | 已有草稿 |
 | 12 | CLI 设计与命令参数 | 已有草稿 |
-| 13 | MCP Server 入门 | 待编写 |
+| 13 | MCP Server 入门 | 已有草稿 |
 | 14 | 最终整理与复盘 | 待编写 |
 
 ## 学习与提交方式
@@ -126,6 +126,7 @@ docs/agent-grading-workflow.md
 - `docs/chapters/10-async-await-error-handling.md`：第 10 章，async / await 与错误处理
 - `docs/chapters/11-vitest-testing.md`：第 11 章，Vitest 测试
 - `docs/chapters/12-cli-design-command-args.md`：第 12 章，CLI 设计与命令参数
+- `docs/chapters/13-mcp-server-intro.md`：第 13 章，MCP Server 入门
 - `docs/rubrics/chapter-00-rubric.md`：第 0 章评分标准
 - `docs/rubrics/chapter-01-rubric.md`：第 1 章评分标准
 - `docs/rubrics/chapter-02-rubric.md`：第 2 章评分标准
@@ -139,6 +140,7 @@ docs/agent-grading-workflow.md
 - `docs/rubrics/chapter-10-rubric.md`：第 10 章评分标准
 - `docs/rubrics/chapter-11-rubric.md`：第 11 章评分标准
 - `docs/rubrics/chapter-12-rubric.md`：第 12 章评分标准
+- `docs/rubrics/chapter-13-rubric.md`：第 13 章评分标准
 - `templates/agent-submission.md`：AI Agent 考核请求模板
 
 ## 当前状态
