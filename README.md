@@ -79,7 +79,7 @@ docs/chapters/00-setup.md
 | 01 | 基础类型、类型推断与函数 | 已有草稿 |
 | 02 | 对象类型、类型别名与接口 | 已有草稿 |
 | 03 | 联合类型、字面量类型与状态建模 | 已有草稿 |
-| 04 | 类型收窄与常见错误阅读 | 待编写 |
+| 04 | 类型收窄与常见错误阅读 | 已有草稿 |
 | 05 | 模块系统与项目拆分 | 待编写 |
 | 06 | 数组、`Record` 与数据查询 | 待编写 |
 | 07 | 泛型入门与可复用函数 | 待编写 |
@@ -117,10 +117,12 @@ docs/agent-grading-workflow.md
 - `docs/chapters/01-basic-types-functions.md`：第 1 章，基础类型、类型推断与函数
 - `docs/chapters/02-object-types.md`：第 2 章，对象类型、类型别名与接口
 - `docs/chapters/03-union-literal-types.md`：第 3 章，联合类型、字面量类型与状态建模
+- `docs/chapters/04-type-narrowing.md`：第 4 章，类型收窄与常见错误阅读
 - `docs/rubrics/chapter-00-rubric.md`：第 0 章评分标准
 - `docs/rubrics/chapter-01-rubric.md`：第 1 章评分标准
 - `docs/rubrics/chapter-02-rubric.md`：第 2 章评分标准
 - `docs/rubrics/chapter-03-rubric.md`：第 3 章评分标准
+- `docs/rubrics/chapter-04-rubric.md`：第 4 章评分标准
 - `templates/agent-submission.md`：AI Agent 考核请求模板
 
 ## 当前状态
