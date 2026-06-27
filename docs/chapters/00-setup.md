@@ -40,6 +40,103 @@ typed-toolbox-lab/
 | package.json | 项目配置、依赖、脚本入口 |
 | tsconfig.json | TypeScript 编译和类型检查配置 |
 
+## 环境准备：先安装 Node.js 和 pnpm
+
+在运行 `pnpm init` 之前，必须先确认本机已经有 Node.js 和 pnpm。
+
+本教程默认你使用 PowerShell、Windows Terminal、macOS Terminal 或 Linux shell。下面命令在 PowerShell 中也可以直接运行。
+
+### Step 0.1：检查 Node.js
+
+先运行：
+
+```powershell
+node --version
+npm --version
+```
+
+如果能看到版本号，例如：
+
+```text
+v22.16.0
+10.9.2
+```
+
+说明 Node.js 已经安装。
+
+如果提示 `node` 不是可识别命令，先安装 Node.js LTS。
+
+Windows 推荐二选一：
+
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+或者到官网下载安装包：
+
+```text
+https://nodejs.org/
+```
+
+安装完成后，重新打开 PowerShell，再运行：
+
+```powershell
+node --version
+npm --version
+```
+
+### Step 0.2：启用 pnpm
+
+Node.js 通常自带 Corepack。Corepack 可以帮你启用 pnpm。
+
+先检查：
+
+```powershell
+corepack --version
+```
+
+如果能看到版本号，运行：
+
+```powershell
+corepack enable
+corepack prepare pnpm@latest --activate
+```
+
+然后验证：
+
+```powershell
+pnpm --version
+```
+
+如果能看到 pnpm 版本号，就可以继续本章后面的 `pnpm init`。
+
+### Step 0.3：如果 Corepack 不可用
+
+如果 `corepack` 也不是可识别命令，可以用 npm 安装 pnpm：
+
+```powershell
+npm install -g pnpm
+```
+
+然后重新打开 PowerShell，验证：
+
+```powershell
+pnpm --version
+```
+
+### Step 0.4：常见 Windows PATH 问题
+
+如果安装后仍然提示 `pnpm` 不是可识别命令，通常是当前 PowerShell 没有刷新 PATH。
+
+按顺序尝试：
+
+1. 关闭当前 PowerShell，重新打开。
+2. 运行 `node --version`，确认 Node.js 可用。
+3. 运行 `corepack enable` 和 `corepack prepare pnpm@latest --activate`。
+4. 再运行 `pnpm --version`。
+
+只有 `pnpm --version` 能正常输出版本号后，才继续创建项目。
+
 ## 概念解释
 
 ### TypeScript 和 JavaScript 的关系
@@ -86,6 +183,16 @@ pnpm typecheck
 - 运行 `package.json` 里的脚本
 
 ## 实践：创建项目
+
+从这里开始，默认你已经确认以下命令都能正常输出版本号：
+
+```powershell
+node --version
+npm --version
+pnpm --version
+```
+
+如果 `pnpm --version` 仍然报错，先回到“环境准备：先安装 Node.js 和 pnpm”修好环境，不要继续执行 `pnpm init`。
 
 ### Step 1：创建目录
 
@@ -349,23 +456,36 @@ Runnable: true
 
 ## 常见错误
 
-### 错误 1：`pnpm: command not found`
+### 错误 1：`pnpm: The term 'pnpm' is not recognized` 或 `pnpm: command not found`
 
-说明你还没有安装或启用 `pnpm`。
+说明你还没有安装或启用 `pnpm`，或者当前终端还没有刷新 PATH。
 
-可以先检查：
+先检查：
 
-```bash
+```powershell
 node --version
+npm --version
 corepack --version
 ```
 
-如果 Node.js 较新，通常可以运行：
+如果 `node` 不可用，先安装 Node.js LTS。
 
-```bash
+如果 `node` 可用但 `pnpm` 不可用，优先运行：
+
+```powershell
 corepack enable
 corepack prepare pnpm@latest --activate
+pnpm --version
 ```
+
+如果 `corepack` 不可用，再使用：
+
+```powershell
+npm install -g pnpm
+pnpm --version
+```
+
+Windows 上安装后仍然不可用时，关闭当前 PowerShell，重新打开，再运行 `pnpm --version`。
 
 ### 错误 2：`Cannot find module` 或找不到 `src/index.ts`
 
@@ -385,6 +505,9 @@ corepack prepare pnpm@latest --activate
 
 完成本章后，你应该确认：
 
+- [ ] 我能运行 `node --version`
+- [ ] 我能运行 `npm --version`
+- [ ] 我能运行 `pnpm --version`
 - [ ] 我创建了 `typed-toolbox-lab` 目录
 - [ ] 我有 `package.json`
 - [ ] 我有 `tsconfig.json`
@@ -400,16 +523,17 @@ corepack prepare pnpm@latest --activate
 
 完成后，把以下内容提交给 AI Agent：
 
-1. 项目目录结构
-2. `package.json` 内容
-3. `tsconfig.json` 内容
-4. `src/index.ts` 内容
-5. `pnpm dev` 输出
-6. `pnpm typecheck` 输出
-7. `pnpm build` 输出
-8. `pnpm start` 输出
-9. 你制造的类型错误信息
-10. 你对本章还不理解的问题
+1. `node --version`、`npm --version`、`pnpm --version` 输出
+2. 项目目录结构
+3. `package.json` 内容
+4. `tsconfig.json` 内容
+5. `src/index.ts` 内容
+6. `pnpm dev` 输出
+7. `pnpm typecheck` 输出
+8. `pnpm build` 输出
+9. `pnpm start` 输出
+10. 你制造的类型错误信息
+11. 你对本章还不理解的问题
 
 你可以复制这个模板填写：
 

@@ -28,6 +28,40 @@
 
 前期主线案例采用“任务清单 / 学习计划 / 通用数据工具箱”，而不是游戏、UE、MCP 或前端页面。这样后续可以自然扩展到对象、联合类型、数组、测试、CLI 和 MCP，同时不影响早期 TypeScript 基础学习。
 
+## 快速开始前的依赖检查
+
+在进入第 0 章并运行 `pnpm init` 之前，先确认本机已经安装 Node.js 和 pnpm。
+
+PowerShell / Windows Terminal 中运行：
+
+```powershell
+node --version
+npm --version
+pnpm --version
+```
+
+如果 `pnpm` 提示不是可识别命令，优先运行：
+
+```powershell
+corepack enable
+corepack prepare pnpm@latest --activate
+pnpm --version
+```
+
+如果 `node` 也不可用，先安装 Node.js LTS：
+
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+安装后重新打开 PowerShell，再重新检查版本。
+
+详细说明见：
+
+```text
+docs/chapters/00-setup.md
+```
+
 ## 章节路线
 
 | 章节 | 主题 | 状态 |
