@@ -172,6 +172,18 @@ pnpm add -D vitest
 
 保留已有的 `dev`、`typecheck`、`build`、`start`。
 
+再新增 `vitest.config.ts`，避免 `pnpm build` 后 Vitest 扫描 `dist/` 里的已编译测试文件，造成同一批测试运行两次：
+
+```ts
+import { defineConfig } from "vitest/config";
+
+export default defineConfig({
+  test: {
+    exclude: ["**/node_modules/**", "**/dist/**"],
+  },
+});
+```
+
 ### Step 3：测试任务 parser
 
 新增 `src/domain/task.test.ts`，测试：
@@ -248,6 +260,7 @@ Agent 应自行读取测试文件、运行 `pnpm test`、`pnpm typecheck`、`pnp
 
 - 项目安装了真实 `vitest` 依赖
 - `package.json` 有 `test` 脚本
+- `vitest.config.ts` 排除 `dist/`，避免构建后重复运行编译产物里的测试
 - `parseLearningTasks` 有成功和失败测试
 - `formatWorkspaceError` 三种错误都有测试
 - `loadWorkspace` 有成功、坏 JSON、坏数据测试

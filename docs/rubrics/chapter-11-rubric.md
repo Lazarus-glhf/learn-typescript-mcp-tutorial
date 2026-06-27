@@ -8,7 +8,8 @@
 
 - 5 分：通过包管理器安装真实 `vitest` 依赖
 - 4 分：`package.json` 包含 `test: vitest run` 或等价脚本
-- 7 分：`src/domain/task.test.ts` 覆盖合法任务、非数组输入、字段类型错误
+- 3 分：`vitest.config.ts` 排除 `dist/`，避免构建后重复运行编译产物测试
+- 6 分：`src/domain/task.test.ts` 覆盖合法任务、非数组输入、字段类型错误
 - 6 分：`src/domain/config.test.ts` 覆盖合法配置和非法状态
 - 7 分：`src/app/formatWorkspaceError.test.ts` 覆盖 `file-read`、`invalid-json`、`invalid-data`
 - 7 分：`src/app/loadWorkspace.test.ts` 覆盖成功、坏 JSON、坏数据

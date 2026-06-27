@@ -89,7 +89,7 @@ docs/chapters/00-setup.md
 | 11 | Vitest 测试 | 已有草稿 |
 | 12 | CLI 设计与命令参数 | 已有草稿 |
 | 13 | MCP Server 入门 | 已有草稿 |
-| 14 | 最终整理与复盘 | 待编写 |
+| 14 | 最终整理与复盘 | 已有草稿 |
 
 ## 学习与提交方式
 
@@ -127,6 +127,7 @@ docs/agent-grading-workflow.md
 - `docs/chapters/11-vitest-testing.md`：第 11 章，Vitest 测试
 - `docs/chapters/12-cli-design-command-args.md`：第 12 章，CLI 设计与命令参数
 - `docs/chapters/13-mcp-server-intro.md`：第 13 章，MCP Server 入门
+- `docs/chapters/14-final-polish-review.md`：第 14 章，最终整理与复盘
 - `docs/rubrics/chapter-00-rubric.md`：第 0 章评分标准
 - `docs/rubrics/chapter-01-rubric.md`：第 1 章评分标准
 - `docs/rubrics/chapter-02-rubric.md`：第 2 章评分标准
@@ -141,8 +142,9 @@ docs/agent-grading-workflow.md
 - `docs/rubrics/chapter-11-rubric.md`：第 11 章评分标准
 - `docs/rubrics/chapter-12-rubric.md`：第 12 章评分标准
 - `docs/rubrics/chapter-13-rubric.md`：第 13 章评分标准
+- `docs/rubrics/chapter-14-rubric.md`：第 14 章评分标准
 - `templates/agent-submission.md`：AI Agent 考核请求模板
 
 ## 当前状态
 
-当前仓库处于教程早期阶段，已经完成课程骨架、第 0 章、第 1 章、评分流程和前两章 Rubric。后续会继续按章节地图迭代。
+当前仓库已经完成第 0-14 章教程草稿、逐章评分标准和 Agent 考核流程。后续重点是根据真实学习者反馈继续修订章节细节、补充示例和完善最终项目体验。
