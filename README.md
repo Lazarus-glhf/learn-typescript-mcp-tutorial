@@ -48,6 +48,15 @@ corepack prepare pnpm@latest --activate
 pnpm --version
 ```
 
+如果你在 Linux / WSL 上执行 `corepack enable` 时遇到 `/usr/bin/pnpm` 权限错误，可以先不创建全局 `pnpm` 命令，改用：
+
+```bash
+corepack prepare pnpm@latest --activate
+corepack pnpm --version
+```
+
+后续命令中的 `pnpm` 可以临时写成 `corepack pnpm`。
+
 如果 `node` 也不可用，先安装 Node.js LTS：
 
 ```powershell

@@ -110,6 +110,28 @@ pnpm --version
 
 如果能看到 pnpm 版本号，就可以继续本章后面的 `pnpm init`。
 
+如果你在 Linux / WSL 上看到类似下面的权限错误：
+
+```text
+EACCES: permission denied, symlink ... -> '/usr/bin/pnpm'
+```
+
+说明 `corepack enable` 正在尝试创建全局 `pnpm` 命令，但当前用户没有写入 `/usr/bin` 的权限。可以先运行：
+
+```bash
+corepack prepare pnpm@latest --activate
+corepack pnpm --version
+```
+
+如果这样能看到版本号，后续命令可以把 `pnpm` 临时写成 `corepack pnpm`，例如：
+
+```bash
+corepack pnpm init
+corepack pnpm add -D typescript tsx @types/node
+```
+
+Windows PowerShell 通常不需要这样写。
+
 ### Step 0.3：如果 Corepack 不可用
 
 如果 `corepack` 也不是可识别命令，可以用 npm 安装 pnpm：
@@ -213,9 +235,9 @@ pnpm init
 
 它会创建一个 `package.json` 文件。
 
-### Step 3：检查 packageManager 字段
+### Step 3：检查 packageManager / devEngines 字段
 
-`pnpm init` 可能会在 `package.json` 里生成 `packageManager` 字段。
+`pnpm init` 可能会在 `package.json` 里生成 `packageManager` 字段，也可能生成 `devEngines.packageManager` 对象。
 
 先打开 `package.json`，如果看到类似下面这种写法：
 
@@ -229,7 +251,31 @@ pnpm init
 "packageManager": "pnpm@11.9.0"
 ```
 
-原因是 Corepack 要求 `packageManager` 使用精确版本号，不能使用 `^11.9.0` 这种 semver range。否则后续运行 `pnpm add` 时可能报错：
+如果你看到的是这种结构：
+
+```json
+"devEngines": {
+  "packageManager": {
+    "name": "pnpm",
+    "version": "^11.9.0",
+    "onFail": "download"
+  }
+}
+```
+
+同样要把 `version` 改成精确版本：
+
+```json
+"devEngines": {
+  "packageManager": {
+    "name": "pnpm",
+    "version": "11.9.0",
+    "onFail": "download"
+  }
+}
+```
+
+原因是 Corepack 要求 package manager 版本使用精确版本号，不能使用 `^11.9.0` 这种 semver range。否则后续运行 `pnpm add` 时可能报错：
 
 ```text
 Invalid package manager specification in package.json (pnpm@^11.9.0); expected a semver version
@@ -253,7 +299,13 @@ pnpm --version
 "packageManager": "pnpm@11.9.0"
 ```
 
-如果你暂时不想处理这个字段，也可以删除整行 `packageManager`，本章后续步骤仍然可以继续。
+如果是 `devEngines.packageManager.version`，就写：
+
+```json
+"version": "11.9.0"
+```
+
+如果你暂时不想处理这些字段，也可以删除整行 `packageManager`，或者删除整个 `devEngines` 对象，本章后续步骤仍然可以继续。
 
 ### Step 4：安装开发依赖
 
@@ -292,6 +344,13 @@ pnpm install
 ```
 
 如果 `pnpm approve-builds` 显示没有待批准项目，说明已经处理过，可以继续后面的步骤。
+
+如果你想一次性批准所有待批准的 build script，也可以运行：
+
+```powershell
+pnpm approve-builds --all
+pnpm install
+```
 
 这些依赖分别是：
 
@@ -573,15 +632,33 @@ Invalid package manager specification in package.json (pnpm@^11.9.0); expected a
 "packageManager": "pnpm@^11.9.0"
 ```
 
+或者：
+
+```json
+"devEngines": {
+  "packageManager": {
+    "name": "pnpm",
+    "version": "^11.9.0",
+    "onFail": "download"
+  }
+}
+```
+
 改成精确版本：
 
 ```json
 "packageManager": "pnpm@11.9.0"
 ```
 
+或者把 `devEngines.packageManager.version` 改成：
+
+```json
+"version": "11.9.0"
+```
+
 也就是去掉 `^`。版本号以你本机 `pnpm --version` 输出为准。
 
-如果你不确定，也可以先删除 `packageManager` 这一整行，然后重新运行：
+如果你不确定，也可以先删除 `packageManager` 这一整行，或者删除整个 `devEngines` 对象，然后重新运行：
 
 ```powershell
 pnpm add -D typescript tsx @types/node
@@ -606,6 +683,13 @@ pnpm approve-builds
 在出现的交互界面里选中 `esbuild` 并确认。然后运行：
 
 ```powershell
+pnpm install
+```
+
+如果你不想进入交互界面，可以运行：
+
+```powershell
+pnpm approve-builds --all
 pnpm install
 ```
 
@@ -641,8 +725,8 @@ pnpm typecheck
 - [ ] 我能运行 `pnpm --version`
 - [ ] 我创建了 `typed-toolbox-lab` 目录
 - [ ] 我有 `package.json`
-- [ ] 如果 `package.json` 有 `packageManager` 字段，它使用的是 `pnpm@精确版本`，没有 `^`
-- [ ] 如果安装依赖时出现 `ERR_PNPM_IGNORED_BUILDS`，我已经运行过 `pnpm approve-builds` 或确认 `pnpm dev` / `pnpm typecheck` 能正常运行
+- [ ] 如果 `package.json` 有 `packageManager` 或 `devEngines.packageManager.version`，它使用的是精确 pnpm 版本，没有 `^`
+- [ ] 如果安装依赖时出现 `ERR_PNPM_IGNORED_BUILDS`，我已经运行过 `pnpm approve-builds` / `pnpm approve-builds --all`，或确认 `pnpm dev` / `pnpm typecheck` 能正常运行
 - [ ] 我有 `tsconfig.json`
 - [ ] 我有 `src/index.ts`
 - [ ] 我能运行 `pnpm dev`
@@ -658,7 +742,7 @@ pnpm typecheck
 
 1. `node --version`、`npm --version`、`pnpm --version` 输出
 2. 项目目录结构
-3. `package.json` 内容，并说明 `packageManager` 字段是否为精确版本
+3. `package.json` 内容，并说明 `packageManager` 或 `devEngines.packageManager.version` 是否为精确版本
 4. `tsconfig.json` 内容
 5. `src/index.ts` 内容
 6. `pnpm dev` 输出
