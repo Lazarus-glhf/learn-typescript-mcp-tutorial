@@ -71,7 +71,7 @@ Agent 还要检查 `devDependencies` 里的 `typescript`、`tsx`、`@types/node`
 
 如果遇到 `[ERR_PNPM_IGNORED_BUILDS] Ignored build scripts: esbuild@...`，Agent 要检查是否需要运行 `pnpm approve-builds` 或 `pnpm approve-builds --all`，或至少确认后续 `pnpm dev` / `pnpm typecheck` 已经能正常运行。
 
-Agent 还要确认学习者完成过制造类型错误并修复的步骤。这个步骤用于证明学习者知道 `tsc` 的用途；如果项目最终状态无法直接证明，应在反馈中要求学习者口头说明当时看到的报错含义。
+Agent 还要确认学习者完成过制造类型错误并修复的步骤。这个步骤用于证明学习者知道 `tsc` 的用途；如果项目最终状态无法直接证明，应追问 1 个短问题，让学习者说明当时看到的报错含义。
 
 ## 推荐反馈重点
 
