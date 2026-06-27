@@ -263,6 +263,36 @@ pnpm --version
 pnpm add -D typescript tsx @types/node
 ```
 
+如果看到类似下面的下载慢警告：
+
+```text
+[WARN] Tarball download average speed ... is below 50 KiB/s
+```
+
+这只是网络下载速度警告。只要最后显示依赖已经加入，就可以继续。
+
+如果看到：
+
+```text
+[ERR_PNPM_IGNORED_BUILDS] Ignored build scripts: esbuild@...
+```
+
+说明 pnpm 出于安全考虑拦截了依赖的安装后脚本。`tsx` 会间接依赖 `esbuild`，本教程可以批准它。
+
+运行：
+
+```powershell
+pnpm approve-builds
+```
+
+然后在交互列表里选中 `esbuild`，确认批准。批准后再运行：
+
+```powershell
+pnpm install
+```
+
+如果 `pnpm approve-builds` 显示没有待批准项目，说明已经处理过，可以继续后面的步骤。
+
 这些依赖分别是：
 
 | 依赖 | 作用 |
@@ -557,7 +587,38 @@ Invalid package manager specification in package.json (pnpm@^11.9.0); expected a
 pnpm add -D typescript tsx @types/node
 ```
 
-### 错误 3：`Cannot find module` 或找不到 `src/index.ts`
+### 错误 3：`ERR_PNPM_IGNORED_BUILDS`
+
+如果安装依赖后看到：
+
+```text
+[ERR_PNPM_IGNORED_BUILDS] Ignored build scripts: esbuild@...
+```
+
+这表示 pnpm 阻止了依赖的安装后脚本。它不是 TypeScript 编译错误，也不代表 `typescript`、`tsx`、`@types/node` 没装上。
+
+本章使用的 `tsx` 会依赖 `esbuild`，可以批准它：
+
+```powershell
+pnpm approve-builds
+```
+
+在出现的交互界面里选中 `esbuild` 并确认。然后运行：
+
+```powershell
+pnpm install
+```
+
+如果你不确定是否处理成功，可以继续运行后面的：
+
+```powershell
+pnpm dev
+pnpm typecheck
+```
+
+只要这两个命令能正常运行，本章就可以继续。
+
+### 错误 4：`Cannot find module` 或找不到 `src/index.ts`
 
 检查：
 
@@ -565,7 +626,7 @@ pnpm add -D typescript tsx @types/node
 - `package.json` 里的 `dev` 脚本是否是 `tsx src/index.ts`
 - 当前终端是否在 `typed-toolbox-lab` 目录里
 
-### 错误 4：`Type 'number' is not assignable to type 'string'`
+### 错误 5：`Type 'number' is not assignable to type 'string'`
 
 这是正常的 TypeScript 类型错误。它表示你把 `number` 类型的值放到了要求 `string` 的变量里。
 
@@ -581,6 +642,7 @@ pnpm add -D typescript tsx @types/node
 - [ ] 我创建了 `typed-toolbox-lab` 目录
 - [ ] 我有 `package.json`
 - [ ] 如果 `package.json` 有 `packageManager` 字段，它使用的是 `pnpm@精确版本`，没有 `^`
+- [ ] 如果安装依赖时出现 `ERR_PNPM_IGNORED_BUILDS`，我已经运行过 `pnpm approve-builds` 或确认 `pnpm dev` / `pnpm typecheck` 能正常运行
 - [ ] 我有 `tsconfig.json`
 - [ ] 我有 `src/index.ts`
 - [ ] 我能运行 `pnpm dev`
