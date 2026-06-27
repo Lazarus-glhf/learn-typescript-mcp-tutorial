@@ -85,7 +85,7 @@ docs/chapters/00-setup.md
 | 07 | 泛型入门与可复用函数 | 已有草稿 |
 | 08 | Node.js、JSON 与运行时边界 | 已有草稿 |
 | 09 | Zod 校验与 `unknown` | 已有草稿 |
-| 10 | `async` / `await` 与错误处理 | 待编写 |
+| 10 | `async` / `await` 与错误处理 | 已有草稿 |
 | 11 | Vitest 测试 | 待编写 |
 | 12 | CLI 设计与命令参数 | 待编写 |
 | 13 | MCP Server 入门 | 待编写 |
@@ -123,6 +123,7 @@ docs/agent-grading-workflow.md
 - `docs/chapters/07-generics-reusable-functions.md`：第 7 章，泛型入门与可复用函数
 - `docs/chapters/08-node-json-runtime-boundary.md`：第 8 章，Node.js、JSON 与运行时边界
 - `docs/chapters/09-zod-validation-unknown.md`：第 9 章，Zod 校验与 unknown
+- `docs/chapters/10-async-await-error-handling.md`：第 10 章，async / await 与错误处理
 - `docs/rubrics/chapter-00-rubric.md`：第 0 章评分标准
 - `docs/rubrics/chapter-01-rubric.md`：第 1 章评分标准
 - `docs/rubrics/chapter-02-rubric.md`：第 2 章评分标准
@@ -133,6 +134,7 @@ docs/agent-grading-workflow.md
 - `docs/rubrics/chapter-07-rubric.md`：第 7 章评分标准
 - `docs/rubrics/chapter-08-rubric.md`：第 8 章评分标准
 - `docs/rubrics/chapter-09-rubric.md`：第 9 章评分标准
+- `docs/rubrics/chapter-10-rubric.md`：第 10 章评分标准
 - `templates/agent-submission.md`：AI Agent 考核请求模板
 
 ## 当前状态
