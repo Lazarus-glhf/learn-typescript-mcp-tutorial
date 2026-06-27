@@ -742,47 +742,15 @@ pnpm typecheck
 
 这类错误是 TypeScript 的核心价值：在程序运行前发现明显类型错误。
 
-## 自检清单
+## AI Agent 考核指令
 
-完成本章后，你应该确认：
-
-- [ ] 我能运行 `node --version`
-- [ ] 我能运行 `npm --version`
-- [ ] 我能运行 `pnpm --version`
-- [ ] 我创建了 `typed-toolbox-lab` 目录
-- [ ] 我有 `package.json`
-- [ ] 如果 `package.json` 有 `packageManager` 或 `devEngines.packageManager.version`，它使用的是精确 pnpm 版本，没有 `^`
-- [ ] 如果安装依赖时出现 `ERR_PNPM_IGNORED_BUILDS`，我已经运行过 `pnpm approve-builds` / `pnpm approve-builds --all`，或确认 `pnpm dev` / `pnpm typecheck` 能正常运行
-- [ ] 我有 `tsconfig.json`
-- [ ] 我有 `src/index.ts`
-- [ ] 我能运行 `pnpm dev`
-- [ ] 我能运行 `pnpm typecheck`
-- [ ] 我能运行 `pnpm build`
-- [ ] 我能运行 `pnpm start`
-- [ ] 我制造过一次类型错误，并看懂了基本报错
-- [ ] 我修复了类型错误
-
-## 提交给 AI Agent 的要求
-
-完成后，把以下内容提交给 AI Agent：
-
-1. `node --version`、`npm --version`、`pnpm --version` 输出
-2. 项目目录结构
-3. `package.json` 内容，并说明 `packageManager` 或 `devEngines.packageManager.version` 是否为精确版本
-4. `tsconfig.json` 内容
-5. `src/index.ts` 内容
-6. `pnpm dev` 输出
-7. `pnpm typecheck` 输出
-8. `pnpm build` 输出
-9. `pnpm start` 输出
-10. 你制造的类型错误信息
-11. 你对本章还不理解的问题
-
-你可以复制这个模板填写：
+完成本章后，在包含 `typed-toolbox-lab` 的工作区里直接对 AI Agent 说：
 
 ```text
-templates/agent-submission.md
+考核第 0 章作业
 ```
+
+Agent 应自行检查项目目录、读取关键文件、运行本章要求的命令，并根据第 0 章 rubric 打分。你不需要复制粘贴目录结构、文件内容或命令输出；如果有还不理解的问题，可以在这句话后面补充说明。
 
 ## 本章通过标准
 

@@ -93,9 +93,9 @@ docs/chapters/00-setup.md
 
 ## 学习与提交方式
 
-学习者每完成一章后，把练习提交给 AI Agent 打分。提交内容不只包含代码，还要包含真实命令输出、类型检查结果、自检清单和遇到的问题。
+学习者每完成一章后，在包含练习项目的工作区里直接让 AI Agent 检查并打分，例如“考核第 1 章作业”。Agent 应自行读取项目目录、运行本章要求的命令，并根据章节 rubric 判断是否完成。
 
-推荐提交模板：
+可选考核请求模板：
 
 ```text
 templates/agent-submission.md
@@ -117,7 +117,7 @@ docs/agent-grading-workflow.md
 - `docs/chapters/01-basic-types-functions.md`：第 1 章，基础类型、类型推断与函数
 - `docs/rubrics/chapter-00-rubric.md`：第 0 章评分标准
 - `docs/rubrics/chapter-01-rubric.md`：第 1 章评分标准
-- `templates/agent-submission.md`：练习提交模板
+- `templates/agent-submission.md`：AI Agent 考核请求模板
 
 ## 当前状态
 

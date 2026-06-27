@@ -371,7 +371,7 @@ pnpm typecheck
 
 直到类型检查通过。
 
-提交给 AI Agent 时，需要贴出你看到的真实错误信息。
+记录你看到的真实错误信息。Agent 考核时会根据项目目录和命令结果判断你是否完成了这个练习；如果你对报错还有疑问，可以在考核请求里补充说明。
 
 ## 加分练习
 
@@ -397,7 +397,7 @@ console.log(describeCompletion(isCompleted));
 
 ### 加分 2：解释推断
 
-在提交给 AI Agent 的内容里，用自己的话解释：
+准备好用自己的话解释：
 
 ```ts
 const estimatedMinutes = 45;
@@ -407,7 +407,7 @@ const estimatedMinutes = 45;
 
 ## 快速判断题
 
-不用写进代码，但提交时请回答。
+不用写进代码，但考核时 Agent 可能会要求你回答。
 
 ### 题 1
 
@@ -496,40 +496,15 @@ function formatTaskTitle(title: any): string {
 
 这会让 TypeScript 放弃检查 `title`。本教程前期不建议使用 `any`。你应该写出更准确的类型。
 
-## 自检清单
+## AI Agent 考核指令
 
-完成本章后，你应该确认：
-
-- [ ] 我知道 `string`、`number`、`boolean` 分别表示什么
-- [ ] 我能解释类型注解和类型推断的区别
-- [ ] 我知道函数参数通常应该写类型
-- [ ] 我写出了 `formatTaskTitle` 和 `getRemainingMinutes`
-- [ ] 我完成了 `formatOwner`
-- [ ] 我完成了 `getEstimatedEndHour`
-- [ ] 我制造并修复过一次参数类型错误
-- [ ] 我运行了 `pnpm dev`
-- [ ] 我运行了 `pnpm typecheck`
-- [ ] 我回答了快速判断题
-
-## 提交给 AI Agent 的要求
-
-完成后，把以下内容提交给 AI Agent：
-
-1. 当前章节编号：`chapter-01`
-2. 项目目录结构
-3. `src/index.ts` 完整内容
-4. `pnpm dev` 输出
-5. `pnpm typecheck` 输出
-6. 你制造的参数类型错误信息
-7. 快速判断题答案
-8. 你对类型注解和类型推断的理解
-9. 你对本章还不理解的问题
-
-可以继续使用模板：
+完成本章后，在包含 `typed-toolbox-lab` 的工作区里直接对 AI Agent 说：
 
 ```text
-templates/agent-submission.md
+考核第 1 章作业
 ```
+
+Agent 应自行检查项目目录、读取 `src/index.ts`、运行 `pnpm dev` 和 `pnpm typecheck`，并根据第 1 章 rubric 打分。你不需要复制粘贴目录结构、代码或命令输出；如果有还不理解的问题，可以在这句话后面补充说明。
 
 ## 本章通过标准
 

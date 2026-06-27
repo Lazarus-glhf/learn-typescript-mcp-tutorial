@@ -6,11 +6,11 @@
 
 ### 1. 正确性：40 分
 
-- 10 分：提交了 `node --version`、`npm --version`、`pnpm --version` 的真实输出，证明依赖环境可用
+- 10 分：Agent 能在项目环境中确认 `node --version`、`npm --version`、`pnpm --version` 可运行，证明依赖环境可用
 - 8 分：项目目录名和基础结构正确，至少包含 `package.json`、`tsconfig.json`、`src/index.ts`
 - 8 分：`src/index.ts` 能正确输出项目名和学习者信息
 - 7 分：完成学习目标输出练习
-- 7 分：完成“制造并修复类型错误”练习，并提交了真实错误信息
+- 7 分：完成“制造并修复类型错误”练习，并能说明或保留足够线索证明理解了类型错误
 
 ### 2. 类型使用：20 分
 
@@ -37,7 +37,7 @@
 - 3 分：`pnpm build` 成功生成 `dist/`
 - 2 分：`pnpm start` 成功运行编译后的 JS
 
-如果没有提交真实命令输出，可运行性最高只能给 5 分。
+如果 Agent 无法运行命令且项目中也没有其他可信证据，可运行性最高只能给 5 分。
 
 ### 5. 代码清晰度：10 分
 
@@ -53,7 +53,7 @@
 
 ## Agent 需要重点检查
 
-Agent 必须确认学习者不是只贴了代码，而是确实运行过：
+Agent 必须自行运行或等价确认：
 
 ```bash
 node --version
@@ -69,9 +69,9 @@ Agent 还要检查 `package.json` 里的 `packageManager` 或 `devEngines.packag
 
 Agent 还要检查 `devDependencies` 里的 `typescript`、`tsx`、`@types/node`。这些值必须是真实 npm 版本，例如 `"tsx": "^4.22.4"`，不能是 `"tsx": "0.01"`、`"@types/node": "你安装后实际生成的版本"` 或其他教程占位文字。
 
-如果学习者提交了 `[ERR_PNPM_IGNORED_BUILDS] Ignored build scripts: esbuild@...`，Agent 要检查学习者是否运行过 `pnpm approve-builds` 或 `pnpm approve-builds --all`，或至少确认后续 `pnpm dev` / `pnpm typecheck` 已经能正常运行。
+如果遇到 `[ERR_PNPM_IGNORED_BUILDS] Ignored build scripts: esbuild@...`，Agent 要检查是否需要运行 `pnpm approve-builds` 或 `pnpm approve-builds --all`，或至少确认后续 `pnpm dev` / `pnpm typecheck` 已经能正常运行。
 
-Agent 还要确认学习者提交了制造类型错误时的真实报错。这个步骤用于证明学习者知道 `tsc` 的用途。
+Agent 还要确认学习者完成过制造类型错误并修复的步骤。这个步骤用于证明学习者知道 `tsc` 的用途；如果项目最终状态无法直接证明，应在反馈中要求学习者口头说明当时看到的报错含义。
 
 ## 推荐反馈重点
 

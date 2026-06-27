@@ -90,5 +90,5 @@ function getRemainingMinutes(estimatedMinutes: number, completed: boolean): numb
 - [ ] 案例是否通用，不依赖 UE/GAS/MCP 背景。
 - [ ] 是否有最小示例、连续项目实践和练习题。
 - [ ] 是否包含一次读报错或修复错误的训练。
-- [ ] 是否要求真实命令输出，而不是口头描述。
+- [ ] 是否要求 Agent 通过实际运行命令或等价证据判断可运行性，而不是只看口头描述。
 - [ ] 是否避免提前使用下一章才会解释的概念。
