@@ -354,11 +354,37 @@ pnpm install
 
 这些依赖分别是：
 
-| 依赖 | 作用 |
-|---|---|
-| `typescript` | TypeScript 编译器，提供 `tsc` |
-| `tsx` | 直接运行 `.ts` 文件 |
-| `@types/node` | Node.js API 的类型定义 |
+| 依赖 | 作用 | `package.json` 里应该是什么值 |
+|---|---|---|
+| `typescript` | TypeScript 编译器，提供 `tsc` | 使用 `pnpm add -D typescript` 自动写入的真实版本，例如 `^5.8.0` |
+| `tsx` | 直接运行 `.ts` 文件 | 使用 `pnpm add -D tsx` 自动写入的真实版本，例如 `^4.22.4` |
+| `@types/node` | Node.js API 的类型定义 | 使用 `pnpm add -D @types/node` 自动写入的真实版本，例如 `^24.0.0` |
+
+这里的版本号必须是真实存在的 npm 包版本，不能写成说明文字，也不能随便写一个不存在的数字。
+
+正确示例：
+
+```json
+"devDependencies": {
+  "@types/node": "^24.0.0",
+  "tsx": "^4.22.4",
+  "typescript": "^5.8.0"
+}
+```
+
+错误示例：
+
+```json
+"devDependencies": {
+  "@types/node": "你安装后实际生成的版本",
+  "tsx": "0.01",
+  "typescript": "随便写一个版本"
+}
+```
+
+如果你看到 `No matching version found for tsx@0.01`，说明 `tsx` 的版本号不存在。把它改成真实版本，或者重新运行 `pnpm add -D tsx` 让 pnpm 自动写入。
+
+如果你看到 `@types/node@你安装后实际生成的版本 isn't supported by any available resolver`，说明你把教程里的说明文字复制进了 `package.json`。把它改成真实版本，或者重新运行 `pnpm add -D @types/node`。
 
 ### Step 5：创建 tsconfig.json
 
@@ -412,14 +438,14 @@ pnpm tsc --init
     "start": "node dist/index.js"
   },
   "devDependencies": {
-    "@types/node": "你安装后实际生成的版本",
-    "tsx": "你安装后实际生成的版本",
-    "typescript": "你安装后实际生成的版本"
+    "@types/node": "^24.0.0",
+    "tsx": "^4.22.4",
+    "typescript": "^5.8.0"
   }
 }
 ```
 
-注意：不要手写 `devDependencies` 的版本号。安装依赖后，`pnpm` 会自动写入真实版本。
+注意：上面的 `devDependencies` 版本号是示例值。你不需要强行和教程完全一致，但必须是真实版本号。安装依赖后，`pnpm` 会自动写入你当前安装到的真实版本。
 
 你需要手动确认的是：
 
