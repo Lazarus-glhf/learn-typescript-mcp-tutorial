@@ -65,7 +65,7 @@ pnpm build
 pnpm start
 ```
 
-Agent 还要检查 `package.json` 里的 `packageManager` 或 `devEngines.packageManager.version`。如果存在，必须类似 `"pnpm@11.9.0"` 或 `"version": "11.9.0"`，不能是 `"pnpm@^11.9.0"` 或 `"version": "^11.9.0"`。
+Agent 还要检查 `package.json` 里的 `packageManager` 或 `devEngines.packageManager.version`。如果存在，必须类似 `"pnpm@11.9.0"` 或 `"version": "11.9.0"`，不能是 `"pnpm@^11.9.0"` 或 `"version": "^11.9.0"`。如果学习者删除了 `packageManager` 或整个 `devEngines` 对象，也可以接受；初学阶段不要求固定包管理器字段。
 
 Agent 还要检查 `devDependencies` 里的 `typescript`、`tsx`、`@types/node`。这些值必须是真实 npm 版本，例如 `"tsx": "^4.22.4"`，不能是 `"tsx": "0.01"`、`"@types/node": "你安装后实际生成的版本"` 或其他教程占位文字。
 

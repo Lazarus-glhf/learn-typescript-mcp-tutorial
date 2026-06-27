@@ -307,6 +307,15 @@ pnpm --version
 
 如果你暂时不想处理这些字段，也可以删除整行 `packageManager`，或者删除整个 `devEngines` 对象，本章后续步骤仍然可以继续。
 
+如果某些编辑器、测试工具或自动检查工具内部调用的是 `npm`，保留下面这种 `devEngines` 还可能触发 npm 的校验：
+
+```text
+EBADDEVENGINES Invalid devEngines.packageManager
+Invalid name "pnpm" does not match "npm" for "packageManager"
+```
+
+这不是 TypeScript 代码错误。初学阶段最简单的处理方式是删除整个 `devEngines` 对象，只保留本教程需要的 `scripts` 和 `devDependencies`。
+
 ### Step 4：安装开发依赖
 
 运行：

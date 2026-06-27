@@ -77,7 +77,7 @@ docs/chapters/00-setup.md
 |---|---|---|
 | 00 | 环境与第一次运行 TypeScript | 已有草稿 |
 | 01 | 基础类型、类型推断与函数 | 已有草稿 |
-| 02 | 对象类型、类型别名与接口 | 待编写 |
+| 02 | 对象类型、类型别名与接口 | 已有草稿 |
 | 03 | 联合类型、字面量类型与状态建模 | 待编写 |
 | 04 | 类型收窄与常见错误阅读 | 待编写 |
 | 05 | 模块系统与项目拆分 | 待编写 |
@@ -115,8 +115,10 @@ docs/agent-grading-workflow.md
 - `docs/agent-grading-workflow.md`：学习者如何提交练习，Agent 如何评分
 - `docs/chapters/00-setup.md`：第 0 章，准备环境与第一次运行 TypeScript
 - `docs/chapters/01-basic-types-functions.md`：第 1 章，基础类型、类型推断与函数
+- `docs/chapters/02-object-types.md`：第 2 章，对象类型、类型别名与接口
 - `docs/rubrics/chapter-00-rubric.md`：第 0 章评分标准
 - `docs/rubrics/chapter-01-rubric.md`：第 1 章评分标准
+- `docs/rubrics/chapter-02-rubric.md`：第 2 章评分标准
 - `templates/agent-submission.md`：AI Agent 考核请求模板
 
 ## 当前状态
