@@ -83,7 +83,7 @@ docs/chapters/00-setup.md
 | 05 | 模块系统与项目拆分 | 已有草稿 |
 | 06 | 数组、`Record` 与数据查询 | 已有草稿 |
 | 07 | 泛型入门与可复用函数 | 已有草稿 |
-| 08 | Node.js、JSON 与运行时边界 | 待编写 |
+| 08 | Node.js、JSON 与运行时边界 | 已有草稿 |
 | 09 | Zod 校验与 `unknown` | 待编写 |
 | 10 | `async` / `await` 与错误处理 | 待编写 |
 | 11 | Vitest 测试 | 待编写 |
@@ -121,6 +121,7 @@ docs/agent-grading-workflow.md
 - `docs/chapters/05-modules-project-structure.md`：第 5 章，模块系统与项目拆分
 - `docs/chapters/06-arrays-record-data-query.md`：第 6 章，数组、Record 与数据查询
 - `docs/chapters/07-generics-reusable-functions.md`：第 7 章，泛型入门与可复用函数
+- `docs/chapters/08-node-json-runtime-boundary.md`：第 8 章，Node.js、JSON 与运行时边界
 - `docs/rubrics/chapter-00-rubric.md`：第 0 章评分标准
 - `docs/rubrics/chapter-01-rubric.md`：第 1 章评分标准
 - `docs/rubrics/chapter-02-rubric.md`：第 2 章评分标准
@@ -129,6 +130,7 @@ docs/agent-grading-workflow.md
 - `docs/rubrics/chapter-05-rubric.md`：第 5 章评分标准
 - `docs/rubrics/chapter-06-rubric.md`：第 6 章评分标准
 - `docs/rubrics/chapter-07-rubric.md`：第 7 章评分标准
+- `docs/rubrics/chapter-08-rubric.md`：第 8 章评分标准
 - `templates/agent-submission.md`：AI Agent 考核请求模板
 
 ## 当前状态

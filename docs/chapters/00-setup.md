@@ -415,6 +415,7 @@ pnpm tsc --init
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
+    "types": ["node"],
     "outDir": "dist",
     "rootDir": "src"
   },
@@ -428,6 +429,7 @@ pnpm tsc --init
 - `strict: true` 表示开启严格类型检查
 - `rootDir: "src"` 表示源码放在 `src/`
 - `outDir: "dist"` 表示编译输出放在 `dist/`
+- `types: ["node"]` 表示启用 Node.js API 的类型定义，后续读取文件、路径处理等章节会用到
 - `include` 表示只检查 `src` 目录里的 `.ts` 文件
 
 ### Step 6：修改 package.json 脚本
