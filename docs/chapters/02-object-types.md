@@ -154,22 +154,88 @@ type LearnerProfile = {
 
 ### 使用 `interface` 描述对象
 
-`interface` 也能描述对象结构：
+`interface` 是 TypeScript 里专门用来描述对象结构的一种写法。它关心的是对象的“形状”：有哪些字段，每个字段是什么类型。
+
+例如下面这个 `interface`：
 
 ```ts
 interface LearningTask {
   title: string;
   estimatedMinutes: number;
   isCompleted: boolean;
+  notes?: string;
 }
 ```
 
-在本章范围内，你可以先把它理解成：
+意思和下面这个 `type` 对象类型非常接近：
+
+```ts
+type LearningTask = {
+  title: string;
+  estimatedMinutes: number;
+  isCompleted: boolean;
+  notes?: string;
+};
+```
+
+把 `type` 写法重写成 `interface` 时，通常只需要做三件事：
+
+1. 把开头的 `type LearningTask = {` 改成 `interface LearningTask {`
+2. 保留 `{ ... }` 里面的字段定义
+3. 删除最后 `}` 后面的分号
+
+也就是说，从：
+
+```ts
+type LearnerProfile = {
+  name: string;
+  currentChapter: number;
+  preferences: {
+    studyMinutesPerDay: number;
+    wantsAgentFeedback: boolean;
+  };
+};
+```
+
+可以改成：
+
+```ts
+interface LearnerProfile {
+  name: string;
+  currentChapter: number;
+  preferences: {
+    studyMinutesPerDay: number;
+    wantsAgentFeedback: boolean;
+  };
+}
+```
+
+改完以后，使用方式不变：
+
+```ts
+const learner: LearnerProfile = {
+  name: "Lazarus",
+  currentChapter: 2,
+  preferences: {
+    studyMinutesPerDay: 60,
+    wantsAgentFeedback: true,
+  },
+};
+
+function formatLearnerProfile(profile: LearnerProfile): string {
+  return `${profile.name} is studying chapter ${profile.currentChapter}`;
+}
+```
+
+在本章范围内，你可以先记住：
 
 ```text
 type 和 interface 都能描述对象形状。
-本教程前期优先用 type，遇到库或团队代码里的 interface 时能看懂即可。
+interface 更常见于“对象模型”和“库暴露出来的对象约定”。
+type 除了能描述对象，后续还会用来描述联合类型等更多类型组合。
 ```
+
+所以本教程前期优先用 `type` 保持写法统一；遇到库或团队代码里的 `interface` 时，你要能看懂，并能把简单对象类型互相改写。
 
 后续章节会继续说明它们更细的差异。现在不要把重点放在争论哪一个更好，而是先掌握对象结构本身。
 
@@ -392,16 +458,37 @@ Lazarus (Laz) is studying chapter 2
 
 ### 必做练习 2：添加任务负责人
 
-给 `LearningTask` 增加一个嵌套对象字段：
+给 `LearningTask` 的类型定义增加一个嵌套对象字段：
 
 ```ts
-owner: {
-  name: string;
-  role: string;
+type LearningTask = {
+  title: string;
+  estimatedMinutes: number;
+  isCompleted: boolean;
+  notes?: string;
+  owner: {
+    name: string;
+    role: string;
+  };
 };
 ```
 
-更新 `task` 对象，并让 `formatTaskSummary` 输出负责人信息。
+然后更新 `task` 对象，补上同样结构的 `owner` 值：
+
+```ts
+const task: LearningTask = {
+  title: "Learn object types",
+  estimatedMinutes: 60,
+  isCompleted: false,
+  notes: "Group related values into one model",
+  owner: {
+    name: "Lazarus",
+    role: "learner",
+  },
+};
+```
+
+最后让 `formatTaskSummary` 输出负责人信息。
 
 期望输出包含：
 
@@ -433,7 +520,27 @@ function formatStudyPlan(plan: StudyPlan): string {
 
 ### 加分练习：使用 `interface` 重写一个对象类型
 
-把 `LearnerProfile` 或 `LearningTask` 其中一个改成 `interface` 写法。
+参考前面“使用 `interface` 描述对象”的改写规则，把 `LearnerProfile` 或 `LearningTask` 其中一个从 `type` 写法改成 `interface` 写法。
+
+例如：
+
+```ts
+type LearningTask = {
+  title: string;
+  estimatedMinutes: number;
+  isCompleted: boolean;
+};
+```
+
+可以重写为：
+
+```ts
+interface LearningTask {
+  title: string;
+  estimatedMinutes: number;
+  isCompleted: boolean;
+}
+```
 
 要求：
 
