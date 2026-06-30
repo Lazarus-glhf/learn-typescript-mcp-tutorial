@@ -1,6 +1,6 @@
 # 教程地图
 
-本教程前期以 `typed-toolbox-lab` 为练习项目。它不是一开始就构建 MCP Server，而是先用通用案例训练 TypeScript 语言能力；中期沉淀 typed core；后期再把核心逻辑包装成 CLI 和 MCP 工具。
+本教程前期以 `typed-toolbox-lab` 为练习项目，并要求每章作业保存在 `works/chapterXX/typed-toolbox-lab`。它不是一开始就构建 MCP Server，而是先用通用案例训练 TypeScript 语言能力；中期沉淀 typed core；后期再把核心逻辑包装成 CLI 和 MCP 工具。
 
 ## 章节总览
 
@@ -38,7 +38,7 @@
 
 ## 每章固定结构
 
-每章文档必须包含：
+每章文档必须包含，并在“项目实践”和“AI Agent 考核指令”中明确本章作业目录：
 
 ```text
 1. 本章目标

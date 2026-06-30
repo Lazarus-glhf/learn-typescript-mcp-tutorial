@@ -1,10 +1,10 @@
 # AI Agent 打分流程
 
-本教程要求学习者每完成一章后，让 AI Agent 直接检查项目目录并打分。Agent 不应依赖学习者复制粘贴长篇输出，而要根据项目文件、可运行命令、练习说明和章节 rubric 自行判断完成度。
+本教程要求学习者每完成一章后，把作业放在 `works/chapterXX/typed-toolbox-lab`，再让 AI Agent 直接检查对应章节目录并打分。Agent 不应依赖学习者复制粘贴长篇输出，而要根据项目文件、可运行命令、练习说明和章节 rubric 自行判断完成度。
 
 ## 学习者操作方式
 
-完成一章后，学习者在包含练习项目的工作区里直接对 AI Agent 说：
+完成一章后，学习者在仓库根目录或对应章节目录里直接对 AI Agent 说：
 
 ```text
 考核/检查/打分 第 X 章作业
@@ -18,16 +18,16 @@
 打分 chapter-01
 ```
 
-学习者可以补充自己遇到的问题或不确定点，但不需要手动整理目录结构、文件内容、命令输出或完成情况清单。
+学习者可以补充自己遇到的问题或不确定点，但不需要手动整理目录结构、文件内容、命令输出或完成情况清单。默认作业位置是 `works/chapterXX/typed-toolbox-lab`。
 
 ## Agent 检查职责
 
 Agent 接到考核请求后必须自行完成：
 
 1. 判断要检查的章节编号，例如 `chapter-00` 或 `chapter-01`
-2. 定位练习项目目录，通常是 `typed-toolbox-lab`
+2. 定位本章作业目录，优先检查 `works/chapterXX/typed-toolbox-lab`；如果不存在，再在当前目录附近查找 `typed-toolbox-lab`
 3. 阅读本章教程和对应 rubric
-4. 查看项目目录结构、关键源码、`package.json`、`tsconfig.json` 等文件
+4. 查看该章节作业目录结构、关键源码、`package.json`、`tsconfig.json` 等文件
 5. 运行本章要求的命令，例如 `pnpm dev`、`pnpm typecheck`、`pnpm build`、`pnpm start`
 6. 根据项目现状和命令结果评分
 7. 对无法从最终文件直接证明的过程性或概念性任务，提出 1-3 个短问题补证

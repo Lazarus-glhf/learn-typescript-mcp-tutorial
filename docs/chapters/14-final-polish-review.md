@@ -120,6 +120,22 @@ pnpm build
 
 ## 项目实践
 
+本章使用独立作业目录。在教程仓库根目录运行下面命令，先从上一章作业复制一份到本章：
+
+```bash
+mkdir -p works/chapter14
+cp -R works/chapter13/typed-toolbox-lab works/chapter14/typed-toolbox-lab
+cd works/chapter14/typed-toolbox-lab
+```
+
+Windows PowerShell 可以运行：
+
+```powershell
+New-Item -ItemType Directory -Force works/chapter14
+Copy-Item -Recurse works/chapter13/typed-toolbox-lab works/chapter14/typed-toolbox-lab
+Set-Location works/chapter14/typed-toolbox-lab
+```
+
 ### Step 1：检查最终目录结构
 
 一个完成后的练习项目大致应该是：
@@ -260,7 +276,7 @@ workspace_filter_tasks
 
 ### 练习 3：让 Agent 做最终评分
 
-在项目根目录对 Agent 说：
+在本章作业目录 `works/chapter14/typed-toolbox-lab` 或仓库根目录对 Agent 说：
 
 ```text
 考核最终项目
@@ -288,7 +304,7 @@ MCP Client 通常运行 `dist/` 里的文件。源码存在不代表构建产物
 
 ## AI Agent 考核指令
 
-完成本章后，在你的项目根目录对 Agent 说：
+完成本章后，确认作业位于 `works/chapter14/typed-toolbox-lab`，然后在仓库根目录或该章节目录里对 Agent 说：
 
 ```text
 考核最终项目

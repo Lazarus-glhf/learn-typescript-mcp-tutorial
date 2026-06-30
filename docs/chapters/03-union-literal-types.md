@@ -277,16 +277,26 @@ pnpm typecheck
 
 ### Step 1：确认你在项目目录中
 
-进入第 0 章创建的项目：
+本章使用独立作业目录。在教程仓库根目录运行下面命令，先从第 2 章作业复制一份到第 3 章：
 
 ```bash
-cd typed-toolbox-lab
+mkdir -p works/chapter03
+cp -R works/chapter02/typed-toolbox-lab works/chapter03/typed-toolbox-lab
+cd works/chapter03/typed-toolbox-lab
+```
+
+Windows PowerShell 可以运行：
+
+```powershell
+New-Item -ItemType Directory -Force works/chapter03
+Copy-Item -Recurse works/chapter02/typed-toolbox-lab works/chapter03/typed-toolbox-lab
+Set-Location works/chapter03/typed-toolbox-lab
 ```
 
 确认项目至少包含：
 
 ```text
-typed-toolbox-lab/
+works/chapter03/typed-toolbox-lab/
   package.json
   tsconfig.json
   src/
@@ -553,7 +563,7 @@ enum TaskStatus {
 
 ## AI Agent 考核指令
 
-完成本章后，在你的练习项目目录里对 AI Agent 说：
+完成本章后，确认作业位于 `works/chapter03/typed-toolbox-lab`，然后在仓库根目录或该章节目录里对 AI Agent 说：
 
 ```text
 考核第 3 章作业
