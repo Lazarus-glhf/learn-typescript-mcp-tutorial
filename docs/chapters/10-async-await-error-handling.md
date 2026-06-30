@@ -249,21 +249,7 @@ pnpm start
 
 ## 项目实践
 
-本章使用独立作业目录。在教程仓库根目录运行下面命令，先从上一章作业复制一份到本章：
-
-```bash
-mkdir -p works/chapter10
-cp -R works/chapter09/typed-toolbox-lab works/chapter10/typed-toolbox-lab
-cd works/chapter10/typed-toolbox-lab
-```
-
-Windows PowerShell 可以运行：
-
-```powershell
-New-Item -ItemType Directory -Force works/chapter10
-Copy-Item -Recurse works/chapter09/typed-toolbox-lab works/chapter10/typed-toolbox-lab
-Set-Location works/chapter10/typed-toolbox-lab
-```
+按 README 的统一作业规则准备本章目录：`works/chapter10/typed-toolbox-lab`。
 
 ### Step 1：保留第 9 章的 schema
 

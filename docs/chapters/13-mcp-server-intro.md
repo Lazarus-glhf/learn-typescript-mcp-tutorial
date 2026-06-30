@@ -194,21 +194,7 @@ node dist/mcp-server.js
 
 ## 项目实践
 
-本章使用独立作业目录。在教程仓库根目录运行下面命令，先从上一章作业复制一份到本章：
-
-```bash
-mkdir -p works/chapter13
-cp -R works/chapter12/typed-toolbox-lab works/chapter13/typed-toolbox-lab
-cd works/chapter13/typed-toolbox-lab
-```
-
-Windows PowerShell 可以运行：
-
-```powershell
-New-Item -ItemType Directory -Force works/chapter13
-Copy-Item -Recurse works/chapter12/typed-toolbox-lab works/chapter13/typed-toolbox-lab
-Set-Location works/chapter13/typed-toolbox-lab
-```
+按 README 的统一作业规则准备本章目录：`works/chapter13/typed-toolbox-lab`。
 
 ### Step 1：安装 MCP SDK
 
