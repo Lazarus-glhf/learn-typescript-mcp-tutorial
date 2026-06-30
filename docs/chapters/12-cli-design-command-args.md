@@ -223,21 +223,7 @@ node dist/index.js summary --config data/config.json --tasks data/tasks.json
 
 ## 项目实践
 
-本章使用独立作业目录。在教程仓库根目录运行下面命令，先从上一章作业复制一份到本章：
-
-```bash
-mkdir -p works/chapter12
-cp -R works/chapter11/typed-toolbox-lab works/chapter12/typed-toolbox-lab
-cd works/chapter12/typed-toolbox-lab
-```
-
-Windows PowerShell 可以运行：
-
-```powershell
-New-Item -ItemType Directory -Force works/chapter12
-Copy-Item -Recurse works/chapter11/typed-toolbox-lab works/chapter12/typed-toolbox-lab
-Set-Location works/chapter12/typed-toolbox-lab
-```
+按 README 的统一作业规则准备本章目录：`works/chapter12/typed-toolbox-lab`。
 
 ### Step 1：保留测试
 

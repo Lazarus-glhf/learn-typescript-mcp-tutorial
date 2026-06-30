@@ -95,6 +95,24 @@ docs/chapters/00-setup.md
 
 学习者每完成一章后，把作业放在对应章节目录中，例如第 1 章使用 `works/chapter01/typed-toolbox-lab`。然后在仓库根目录或对应章节目录里直接让 AI Agent 检查并打分，例如“考核第 1 章作业”。Agent 应优先定位 `works/chapterXX/typed-toolbox-lab`，读取项目目录、运行本章要求的命令，并根据章节 rubric 判断是否完成。
 
+第 0 章会创建第一份作业。后续章节开始前，从上一章复制一份到当前章节，再在当前章节目录里完成本章内容。示例：
+
+```bash
+mkdir -p works/chapter02
+cp -R works/chapter01/typed-toolbox-lab works/chapter02/typed-toolbox-lab
+cd works/chapter02/typed-toolbox-lab
+```
+
+Windows PowerShell：
+
+```powershell
+New-Item -ItemType Directory -Force works/chapter02
+Copy-Item -Recurse works/chapter01/typed-toolbox-lab works/chapter02/typed-toolbox-lab
+Set-Location works/chapter02/typed-toolbox-lab
+```
+
+学习第几章，就把示例里的 `chapter01` / `chapter02` 换成对应的上一章 / 当前章编号。
+
 可选考核请求模板：
 
 ```text
