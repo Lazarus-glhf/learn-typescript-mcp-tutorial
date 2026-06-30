@@ -2,6 +2,8 @@
 
 满分 100 分。
 
+Agent 评分时应优先检查 `works/chapter05/typed-toolbox-lab`。如果学习者已经在该目录中发起请求，也可以直接检查当前目录。
+
 ## 评分明细
 
 ### 1. 正确性：40 分
@@ -38,7 +40,7 @@
 
 ### 3. 项目结构：15 分
 
-- 5 分：目录结构包含 `src/domain/`、`src/app/`、`src/index.ts`
+- 5 分：本章作业目录结构包含 `src/domain/`、`src/app/`、`src/index.ts`
 - 5 分：`domain` 放类型和纯逻辑，`app` 放展示格式化，`index` 放入口组织
 - 5 分：没有提前引入数组、泛型、Zod、测试框架、CLI 或 MCP
 

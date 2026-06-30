@@ -248,6 +248,22 @@ pnpm typecheck
 
 ## 项目实践
 
+本章使用独立作业目录。在教程仓库根目录运行下面命令，先从上一章作业复制一份到本章：
+
+```bash
+mkdir -p works/chapter09
+cp -R works/chapter08/typed-toolbox-lab works/chapter09/typed-toolbox-lab
+cd works/chapter09/typed-toolbox-lab
+```
+
+Windows PowerShell 可以运行：
+
+```powershell
+New-Item -ItemType Directory -Force works/chapter09
+Copy-Item -Recurse works/chapter08/typed-toolbox-lab works/chapter09/typed-toolbox-lab
+Set-Location works/chapter09/typed-toolbox-lab
+```
+
 ### Step 1：确认 Node 类型配置仍然存在
 
 第 8 章已经要求 `tsconfig.json` 包含 Node 类型：
@@ -264,7 +280,7 @@ pnpm typecheck
 
 ### Step 2：安装 Zod
 
-在项目根目录运行：
+在本章作业目录 `works/chapter09/typed-toolbox-lab` 中运行：
 
 ```bash
 pnpm add zod
@@ -472,7 +488,7 @@ const tasks = LearningTaskListSchema.parse(parsed);
 
 ## AI Agent 考核指令
 
-完成本章后，在你的项目根目录对 Agent 说：
+完成本章后，确认作业位于 `works/chapter09/typed-toolbox-lab`，然后在仓库根目录或该章节目录里对 Agent 说：
 
 ```text
 考核第 9 章作业

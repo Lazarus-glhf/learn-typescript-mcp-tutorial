@@ -6,7 +6,7 @@
 
 ## 学习成果
 
-完成教程后，学习者会得到一个逐步演进的 TypeScript 项目：`typed-toolbox-lab`。
+完成教程后，学习者会在 `works/` 下得到一组按章节保存的 TypeScript 作业目录。每章目录中都有独立的 `typed-toolbox-lab`，用于保留当章完成时的代码状态。
 
 项目会按阶段增长：
 
@@ -93,7 +93,7 @@ docs/chapters/00-setup.md
 
 ## 学习与提交方式
 
-学习者每完成一章后，在包含练习项目的工作区里直接让 AI Agent 检查并打分，例如“考核第 1 章作业”。Agent 应自行读取项目目录、运行本章要求的命令，并根据章节 rubric 判断是否完成。
+学习者每完成一章后，把作业放在对应章节目录中，例如第 1 章使用 `works/chapter01/typed-toolbox-lab`。然后在仓库根目录或对应章节目录里直接让 AI Agent 检查并打分，例如“考核第 1 章作业”。Agent 应优先定位 `works/chapterXX/typed-toolbox-lab`，读取项目目录、运行本章要求的命令，并根据章节 rubric 判断是否完成。
 
 可选考核请求模板：
 

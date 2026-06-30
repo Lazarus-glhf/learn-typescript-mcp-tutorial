@@ -212,6 +212,22 @@ pnpm typecheck
 
 ## 项目实践
 
+本章使用独立作业目录。在教程仓库根目录运行下面命令，先从上一章作业复制一份到本章：
+
+```bash
+mkdir -p works/chapter05
+cp -R works/chapter04/typed-toolbox-lab works/chapter05/typed-toolbox-lab
+cd works/chapter05/typed-toolbox-lab
+```
+
+Windows PowerShell 可以运行：
+
+```powershell
+New-Item -ItemType Directory -Force works/chapter05
+Copy-Item -Recurse works/chapter04/typed-toolbox-lab works/chapter05/typed-toolbox-lab
+Set-Location works/chapter05/typed-toolbox-lab
+```
+
 ### Step 1：创建目录
 
 在 `typed-toolbox-lab` 项目中创建目录：
@@ -461,7 +477,7 @@ index：入口组织
 
 ## AI Agent 考核指令
 
-完成本章后，在你的练习项目目录里对 AI Agent 说：
+完成本章后，确认作业位于 `works/chapter05/typed-toolbox-lab`，然后在仓库根目录或该章节目录里对 AI Agent 说：
 
 ```text
 考核第 5 章作业

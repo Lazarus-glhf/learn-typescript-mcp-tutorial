@@ -1,6 +1,6 @@
 # AI Agent 考核请求模板
 
-通常不需要填写长模板。完成一章后，在包含 `typed-toolbox-lab` 的工作区里直接对 AI Agent 说：
+通常不需要填写长模板。完成一章后，把代码放在对应章节目录中，例如 `works/chapter01/typed-toolbox-lab`，然后直接对 AI Agent 说：
 
 ```text
 考核第 X 章作业
@@ -13,7 +13,7 @@
 打分 chapter-XX
 ```
 
-Agent 会自行检查项目目录、读取文件、运行本章要求的命令，并根据对应 rubric 打分。
+Agent 会优先检查 `works/chapterXX/typed-toolbox-lab`，读取文件、运行本章要求的命令，并根据对应 rubric 打分。
 
 如果你有卡住的地方，可以在请求后面补充：
 

@@ -37,11 +37,13 @@
 5. 先让学习者理解类型推断、显式注解、对象建模、联合类型和类型收窄，再进入泛型、工具类型和工程配置。
 6. 核心逻辑优先写成纯 TypeScript 函数，再在后期包装成 CLI 或 MCP Tool。
 7. 从早期就建立阅读 TypeScript 报错的习惯，但不在第 0 章强行引入测试框架。
-8. AI Agent 打分以真实文件、Agent 实际运行命令得到的输出和练习完成度为依据。
+8. AI Agent 打分以 `works/chapterXX/typed-toolbox-lab` 中的真实文件、Agent 实际运行命令得到的输出和练习完成度为依据。
 
 ## 主线项目策略
 
 项目名：`typed-toolbox-lab`
+
+作业保存方式：仓库根目录下使用 `works/chapterXX/typed-toolbox-lab`。每个章节目录保存该章完成后的独立项目状态，例如 `works/chapter00/typed-toolbox-lab`、`works/chapter01/typed-toolbox-lab`。
 
 前期项目不是最终 MCP Server，而是一组逐步扩展的通用 TypeScript 练习：
 

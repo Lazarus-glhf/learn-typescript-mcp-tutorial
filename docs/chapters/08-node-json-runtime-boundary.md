@@ -239,6 +239,22 @@ pnpm start
 
 ## 项目实践
 
+本章使用独立作业目录。在教程仓库根目录运行下面命令，先从上一章作业复制一份到本章：
+
+```bash
+mkdir -p works/chapter08
+cp -R works/chapter07/typed-toolbox-lab works/chapter08/typed-toolbox-lab
+cd works/chapter08/typed-toolbox-lab
+```
+
+Windows PowerShell 可以运行：
+
+```powershell
+New-Item -ItemType Directory -Force works/chapter08
+Copy-Item -Recurse works/chapter07/typed-toolbox-lab works/chapter08/typed-toolbox-lab
+Set-Location works/chapter08/typed-toolbox-lab
+```
+
 ### Step 1：确认 `tsconfig.json` 启用了 Node 类型
 
 第 8 章会使用 `node:fs/promises`。确认 `tsconfig.json` 的 `compilerOptions` 中包含：
@@ -255,7 +271,7 @@ Cannot find name 'node:fs/promises'
 
 ### Step 2：创建 `data/tasks.json`
 
-在项目根目录创建 `data/tasks.json`，写入最小示例中的任务数组。
+在本章作业目录 `works/chapter08/typed-toolbox-lab` 中创建 `data/tasks.json`，写入最小示例中的任务数组。
 
 ### Step 3：更新 `src/domain/task.ts`
 
@@ -432,7 +448,7 @@ const text = await readFile(filePath, "utf8");
 
 ## AI Agent 考核指令
 
-完成本章后，在你的练习项目目录里对 AI Agent 说：
+完成本章后，确认作业位于 `works/chapter08/typed-toolbox-lab`，然后在仓库根目录或该章节目录里对 AI Agent 说：
 
 ```text
 考核第 8 章作业

@@ -2,6 +2,8 @@
 
 满分 100 分。
 
+Agent 评分时应优先检查 `works/chapter06/typed-toolbox-lab`。如果学习者已经在该目录中发起请求，也可以直接检查当前目录。
+
 ## 评分明细
 
 ### 1. 正确性：40 分
@@ -33,7 +35,7 @@
 
 ### 3. 项目结构：15 分
 
-- 5 分：继续沿用 `src/domain/`、`src/app/`、`src/index.ts` 结构
+- 5 分：本章作业目录继续沿用 `src/domain/`、`src/app/`、`src/index.ts` 结构
 - 5 分：数组查询和统计逻辑放在 `src/domain/task.ts`
 - 5 分：入口文件只创建示例数据并输出结果，没有堆放主要业务函数
 

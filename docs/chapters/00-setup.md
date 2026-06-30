@@ -218,12 +218,25 @@ pnpm --version
 
 ### Step 1：创建目录
 
-在你准备放学习项目的位置运行：
+在教程仓库根目录运行：
 
 ```bash
+mkdir -p works/chapter00
+cd works/chapter00
 mkdir typed-toolbox-lab
 cd typed-toolbox-lab
 ```
+
+Windows PowerShell 可以运行：
+
+```powershell
+New-Item -ItemType Directory -Force works/chapter00
+Set-Location works/chapter00
+New-Item -ItemType Directory -Force typed-toolbox-lab
+Set-Location typed-toolbox-lab
+```
+
+本章作业最终应保存在 `works/chapter00/typed-toolbox-lab`。
 
 ### Step 2：初始化 package.json
 
@@ -757,7 +770,7 @@ pnpm typecheck
 
 ## AI Agent 考核指令
 
-完成本章后，在包含 `typed-toolbox-lab` 的工作区里直接对 AI Agent 说：
+完成本章后，确认作业位于 `works/chapter00/typed-toolbox-lab`，然后在仓库根目录或该章节目录里直接对 AI Agent 说：
 
 ```text
 考核第 0 章作业
