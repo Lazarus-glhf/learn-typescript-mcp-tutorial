@@ -71,6 +71,29 @@ const titles = tasks.map((task) => task.title);
 
 结果是 `string[]`。
 
+这里第一次出现了 `=>`。它叫箭头函数，常用来写一个很短的函数。
+
+```ts
+(task) => task.title
+```
+
+可以先按两段理解：
+
+- `task` 是当前正在处理的数组项
+- `task.title` 是这个小函数返回的结果
+
+所以这段代码的意思是：对 `tasks` 里的每一个 `task`，取出它的 `title`。
+
+如果写成普通函数，它大致等价于：
+
+```ts
+function getTitle(task: LearningTask): string {
+  return task.title;
+}
+```
+
+在 `map`、`filter`、`find`、`reduce` 这些数组方法里，箭头函数经常用来描述“对每一项要做什么”。
+
 ### `filter`：筛选一部分
 
 `filter` 适合筛选出某种状态的任务：
