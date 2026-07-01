@@ -78,7 +78,7 @@ pnpm start
 Agent 还要检查：
 
 - `data/tasks.json` 是否存在且能被读取
-- `tsconfig.json` 是否启用 `"types": ["node"]`，从而支持 `node:fs/promises` 类型
+- `package.json` 是否安装真实版本的 `@types/node`，且 `tsconfig.json` 是否在 `compilerOptions` 中启用 `"types": ["node"]`，从而支持 `node:fs/promises` 类型
 - `JSON.parse` 结果是否显式进入 `unknown` 边界
 - 是否通过 `parseLearningTasks` 校验后才返回 `LearningTask[]`
 - 坏 JSON 数据是否会在运行时报清晰错误
