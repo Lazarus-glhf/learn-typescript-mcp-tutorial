@@ -1,0 +1,13 @@
+[
+  {
+    "title": "Read tasks from JSON",
+    "estimatedMinutes": 45,
+    "status": "doing",
+    "notes": "Loaded from JSON"
+  },
+  {
+    "title": "Review runtime boundaries",
+    "estimatedMinutes": 30,
+    "status": "todo"
+  }
+]
