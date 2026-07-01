@@ -288,9 +288,21 @@ Cannot find name 'node:fs/promises'
 Cannot find module 'node:fs/promises' or its corresponding type declarations
 ```
 
-### Step 2：创建 `data/tasks.json`
+### Step 2：创建项目根目录下的 `data/tasks.json`
 
 在本章作业目录 `works/chapter08/typed-toolbox-lab` 中创建 `data/tasks.json`，写入最小示例中的任务数组。
+
+这里的 `data/tasks.json` 是项目根目录下的文件，不是 `src/data/tasks.json`。完成后目录应该是：
+
+```text
+typed-toolbox-lab/
+  data/
+    tasks.json
+  src/
+    index.ts
+```
+
+也就是说，运行 `pnpm dev` 时，当前终端应该在 `typed-toolbox-lab` 目录，程序会读取相对于项目根目录的 `data/tasks.json`。
 
 ### Step 3：更新 `src/domain/task.ts`
 
