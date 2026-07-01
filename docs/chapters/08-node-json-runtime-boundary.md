@@ -249,10 +249,43 @@ pnpm start
 "types": ["node"]
 ```
 
+如果你的 `tsconfig.json` 还没有这一项，就把它加到 `compilerOptions` 里。注意上一行需要逗号，例如：
+
+```json
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "dist",
+    "rootDir": "src",
+    "types": ["node"]
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules", "dist"]
+}
+```
+
+同时确认 `package.json` 的 `devDependencies` 中已经有真实版本的 `@types/node`。如果没有，运行：
+
+```bash
+pnpm add -D @types/node
+```
+
 如果没有这一项，`pnpm typecheck` 可能会报：
 
 ```text
 Cannot find name 'node:fs/promises'
+```
+
+或：
+
+```text
+Cannot find module 'node:fs/promises' or its corresponding type declarations
 ```
 
 ### Step 2：创建 `data/tasks.json`
@@ -431,6 +464,20 @@ const text = await readFile(filePath, "utf8");
 ### 错误 4：在 domain 层读取文件
 
 `src/domain/task.ts` 应该只处理任务类型和检查逻辑。读取文件放在 `src/node/loadTasks.ts`。
+
+### 错误 5：只安装了 `@types/node`，但 `tsconfig.json` 没启用 Node 类型
+
+如果 `package.json` 里已经有 `@types/node`，但 `pnpm typecheck` 仍然提示找不到 `node:fs/promises`，检查 `tsconfig.json` 的 `compilerOptions`：
+
+```json
+"types": ["node"]
+```
+
+这项必须和 `@types/node` 同时存在。修改后重新运行：
+
+```bash
+pnpm typecheck
+```
 
 ## AI Agent 考核指令
 
